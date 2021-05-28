@@ -6,21 +6,25 @@ const useStyles = makeStyles((theme) => ({
   mainCard: {
     [theme.breakpoints.down("xs")]: {},
   },
+
+  cardStyle: {
+    "&:hover": {
+      background: "#f9f9f9",
+      // paddingLeft: "5px",
+      paddingRight: "5px",
+    },
+
+    borderRadius: "0",
+    height: "550px",
+    width: "175px",
+    cursor: "pointer",
+  },
 }));
 
 export default function Cards({ project }) {
   const classes = useStyles();
   return (
-    <Paper
-      variant="outlined"
-      style={{
-        borderRadius: "0",
-        height: "550px",
-        width: "175px",
-        cursor: "pointer",
-      }}
-      elevation={0}
-    >
+    <Paper variant="outlined" className={classes.cardStyle} elevation={0}>
       <div
         style={{
           display: "flex",
